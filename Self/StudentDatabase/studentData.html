@@ -1,0 +1,142 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Student Records</title>
+  </head>
+
+  <body>
+    <div class="mainTable">
+      <h1>Student Data</h1>
+      <input
+        type="text"
+        name=""
+        id="myInput"
+        placeholder="Search for names"
+        onkeyup="searchFunc()"
+      />
+      <table id="table">
+        <tr>
+          <th>StuId</th>
+          <th>Student Name</th>
+          <th>Studnet RollNo</th>
+          <th>Student Age</th>
+          <th>Student city</th>
+          <th>Mobile no</th>
+          <th>Attendence</th>
+        </tr>
+
+        <tr>
+          <td>01</td>
+          <td>Sumit Mohite</td>
+          <td>04</td>
+          <td>24</td>
+          <td>Kolhapur</td>
+          <td>12345663</td>
+          <td>Present</td>
+        </tr>
+
+        <tr>
+          <td>02</td>
+          <td>Samiksha Mohit</td>
+          <td>05</td>
+          <td>29</td>
+          <td>Pune</td>
+          <td>1234576896</td>
+          <td>NotPresent</td>
+        </tr>
+
+        <tr>
+          <td>03</td>
+          <td>Gauri Jadhav</td>
+          <td>12</td>
+          <td>22</td>
+          <td>Mumbai</td>
+          <td>9049401447</td>
+          <td>Present</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>Rushikesh Gund</td>
+          <td>01</td>
+          <td>18</td>
+          <td>sangli</td>
+          <td>8888888128</td>
+          <td>Present</td>
+        </tr>
+        <tr>
+          <td>05</td>
+          <td>Komal Patil</td>
+          <td>02</td>
+          <td>21</td>
+          <td>Miraj</td>
+          <td>9123456778</td>
+          <td>NotPresent</td>
+        </tr>
+        <tr>
+          <td>06</td>
+          <td>Shraddha Gund</td>
+          <td>07</td>
+          <td>20</td>
+          <td>Navi Mumabi</td>
+          <td>8806020125</td>
+          <td>Present</td>
+        </tr>
+        <tr>
+          <td>07</td>
+          <td>Yash Powar</td>
+          <td>05</td>
+          <td>26</td>
+          <td>Solapur</td>
+          <td>9049401345</td>
+          <td>NotPresent</td>
+        </tr>
+
+        <tr>
+          <td>08</td>
+          <td>Sonali Kadam</td>
+          <td>12</td>
+          <td>23</td>
+          <td>Ravet</td>
+          <td>2345678912</td>
+          <td>Present</td>
+        </tr>
+        <tr>
+          <td>09</td>
+          <td>Sudeb Patil</td>
+          <td>07</td>
+          <td>27</td>
+          <td>Sangli</td>
+          <td>9034567823</td>
+          <td>NotPresent</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Anil patil</td>
+          <td>09</td>
+          <td>22</td>
+          <td>Kolhapur</td>
+          <td>6788945665</td>
+          <td>Present</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="StudentPresent">
+      <button type="button" onclick="prsentCount()">
+        Count Present Student
+      </button>
+    </div>
+    <div>
+      <p style="text-align: center">Student Present Count is</p>
+      <p id="student-count" style="text-align: center">
+        Press Count Present Students Button to show Number of Students Present.
+        (Note: This Text will Disappear After you click on that button.)
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

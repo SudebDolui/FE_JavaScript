@@ -1,0 +1,68 @@
+https://www.npmjs.com/package/json-server⁡⁣⁢⁣
+
+What and Why?⁡
+
+JSON server is an npm package that lets you create fake REST APIs with less coding.
+
+As a front end developer, we constantly need mock data that we can use quickly to prototype front end component.
+
+Data should be fetched asynchronously and the APIs should support not just GET but also POST, PUT and DELETE requests.
+
+Creating a node + express + mongodb backend is pretty time consuming.
+
+⁡⁢⁢⁢Steps to install package:⁡
+
+npm init -y ---> Used to create package.json file.
+npm add json-server ---> Package for JSON server.
+
+⁡⁣⁣⁢Get Request:⁡
+
+⁡Simply navigate to /products to get the list of products.
+We can also navigate to /products/1 to get product that contains id 1.
+
+⁡⁢⁢⁢Filter:⁡
+
+/products?category=Electronics
+/products?category=Electronics&discount.type=shipping
+
+⁡⁢⁢⁢Sorting:⁡
+
+/products?_sort=price   ---> gives ascending order
+/products?_sort=price&_order=desc   ---> gives descending order
+
+/products?_sort=price,category&_oder=desc,asc   ---> sort category in ascending order and then price by descending order
+
+⁡⁢⁢⁢Pagination:⁡
+
+/products?_page=1 ---> TO get page 1 by default we have 10 items in a page
+/products?_page=1&_limit=2   ---> To get page 1 which contains two items.
+
+
+⁡⁢⁢⁢Operators:⁡
+
+/products?price_gte=2000&price_lte=6000   ---> gte(greater than equal) and lte(lesser than equal)
+/products?id_ne=1   ---> ne(not equal)
+/products?category_like=E
+
+⁡⁢⁢⁢Full Text search:⁡
+
+/products?q=in
+
+⁡⁢⁢⁢Relationships:⁡
+
+/products?_embed=reviews
+/reviews?_expand=product
+
+⁡⁣⁣⁢Post Request:⁡
+
+http://localhost:3000/products ---> Use Post Request.
+
+Configuration:
+
+--port 4000 
+
+Custom Configurations:
+
+--routes routes.json
+
+faker, casual or chancejs

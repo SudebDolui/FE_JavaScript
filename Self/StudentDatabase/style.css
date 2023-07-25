@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.mainTable{
+	text-align: center;
+	margin-top: 10px;
+}
+
+ #table{
+	margin: 20px auto;
+    border: 1px solid black;
+}
+table{
+    width: 60%;
+    border-collapse:separate;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid;
+    text-align: center;
+  }
+
+ .StudentPresent,button{
+    text-align: center;
+	
+}  
+
+#myInput {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 60%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
