@@ -2,7 +2,7 @@
 
 /*
 ///////////////////////////////////////
-// Default Parameters
+// -> Default Parameters
 const bookings = [];
 
 const createBooking = function (
@@ -10,9 +10,9 @@ const createBooking = function (
   numPassengers = 1,
   price = 199 * numPassengers
 ) {
-  // ES5
-  // numPassengers = numPassengers || 1;
-  // price = price || 199;
+  // -> ES5
+  // ---> numPassengers = numPassengers || 1;
+  // ---> price = price || 199;
 
   const booking = {
     flightNum,
@@ -32,7 +32,7 @@ createBooking('LH123', undefined, 1000);
 
 
 ///////////////////////////////////////
-// How Passing Arguments Works: Values vs. Reference
+// --> How Passing Arguments Works: Values vs. Reference
 const flight = 'LH234';
 const jonas = {
   name: 'Jonas Schmedtmann',
@@ -50,13 +50,13 @@ const checkIn = function (flightNum, passenger) {
   }
 };
 
-// checkIn(flight, jonas);
-// console.log(flight);
-// console.log(jonas);
+// -------> checkIn(flight, jonas);
+// --------> console.log(flight);
+// --------> console.log(jonas);
 
-// Is the same as doing...
-// const flightNum = flight;
-// const passenger = jonas;
+// --> Is the same as doing...
+// -----> const flightNum = flight;
+// -----> const passenger = jonas;
 
 const newPassport = function (person) {
   person.passport = Math.trunc(Math.random() * 100000000000);
@@ -67,7 +67,7 @@ checkIn(flight, jonas);
 
 
 ///////////////////////////////////////
-// Functions Accepting Callback Functions
+// ---> Functions Accepting Callback Functions
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -77,7 +77,7 @@ const upperFirstWord = function (str) {
   return [first.toUpperCase(), ...others].join(' ');
 };
 
-// Higher-order function
+// ---> Higher-order function
 const transformer = function (str, fn) {
   console.log(`Original string: ${str}`);
   console.log(`Transformed string: ${fn(str)}`);
@@ -88,7 +88,7 @@ const transformer = function (str, fn) {
 transformer('JavaScript is the best!', upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
 
-// JS uses callbacks all the time
+// ---> JS uses callbacks all the time
 const high5 = function () {
   console.log('👋');
 };
@@ -97,7 +97,7 @@ document.body.addEventListener('click', high5);
 
 
 ///////////////////////////////////////
-// Functions Returning Functions
+// ---> Functions Returning Functions
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -110,19 +110,19 @@ greeterHey('Steven');
 
 greet('Hello')('Jonas');
 
-// Challenge
+// ---> Challenge
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArr('Hi')('Jonas');
 
 
 ///////////////////////////////////////
-// The call and apply Methods
+// --> The call and apply Methods
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
   bookings: [],
-  // book: function() {}
+  // ---> book: function() {}
   book(flightNum, name) {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
@@ -142,10 +142,10 @@ const eurowings = {
 
 const book = lufthansa.book;
 
-// Does NOT work
-// book(23, 'Sarah Williams');
+// -> Does NOT work
+// --> book(23, 'Sarah Williams');
 
-// Call method
+// ---> Call method
 book.call(eurowings, 23, 'Sarah Williams');
 console.log(eurowings);
 
@@ -160,7 +160,7 @@ const swiss = {
 
 book.call(swiss, 583, 'Mary Cooper');
 
-// Apply method
+// --> Apply method
 const flightData = [583, 'George Cooper'];
 book.apply(swiss, flightData);
 console.log(swiss);
@@ -168,8 +168,8 @@ console.log(swiss);
 book.call(swiss, ...flightData);
 
 ///////////////////////////////////////
-// The bind Method
-// book.call(eurowings, 23, 'Sarah Williams');
+// ---> The bind Method
+// --> book.call(eurowings, 23, 'Sarah Williams');
 
 const bookEW = book.bind(eurowings);
 const bookLH = book.bind(lufthansa);
@@ -181,7 +181,7 @@ const bookEW23 = book.bind(eurowings, 23);
 bookEW23('Jonas Schmedtmann');
 bookEW23('Martha Cooper');
 
-// With Event Listeners
+// --> With Event Listeners
 lufthansa.planes = 300;
 lufthansa.buyPlane = function () {
   console.log(this);
@@ -189,18 +189,18 @@ lufthansa.buyPlane = function () {
   this.planes++;
   console.log(this.planes);
 };
-// lufthansa.buyPlane();
+// --> lufthansa.buyPlane();
 
 document
   .querySelector('.buy')
   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
-// Partial application
+// --> Partial application
 const addTax = (rate, value) => value + value * rate;
 console.log(addTax(0.1, 200));
 
 const addVAT = addTax.bind(null, 0.23);
-// addVAT = value => value + value * 0.23;
+// --> addVAT = value => value + value * 0.23;
 
 console.log(addVAT(100));
 console.log(addVAT(23));
