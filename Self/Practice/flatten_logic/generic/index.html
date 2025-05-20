@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Array Flattening Methods in JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>JavaScript Array Flattening Methods</h1>
+            
+            <label for="inputArray">Input Nested Array (JavaScript notation):</label>
+            <textarea id="inputArray">[1, [2, [3, 4], 5], 6, [[7]], 8]</textarea>
+
+            <div>
+                <button onclick="runRecursive()">Flatten (Recursive)</button>
+                <button onclick="runIterative()">Flatten (Iterative with stack)</button>
+                <button onclick="runFlatMethod()">Flatten (Array.flat())</button>
+                <button onclick="runReduceRecursive()">Flatten (Reduce + Recursion)</button>
+            </div>
+
+        <div id="output" class="results"></div>
+
+        <div class="method">
+            <h2>Method Explanations & Thought Process</h2>
+
+            <h3>1. Recursive Method</h3>
+            <p class="method-description">
+            This method uses a simple recursion approach: for each element in the array, 
+            if it is itself an array, recursively flatten it and concatenate its results; 
+            if it's not an array, add it directly to the result. This approach naturally 
+            handles any depth of nesting.
+            </p>
+
+            <h3>2. Iterative Method Using a Stack</h3>
+            <p class="method-description">
+            Instead of recursion, this method uses a stack data structure to process elements. 
+            It repeatedly pops elements from the stack: if an element is an array it pushes 
+            its items back to the stack; if not, it adds it to the result. This avoids recursion 
+            and can be more performant or safer against call stack size limits.
+            </p>
+
+            <h3>3. Using Array.prototype.flat()</h3>
+            <p class="method-description">
+            JavaScript ES2019 introduced the <code>flat()</code> method which can flatten nested 
+            arrays to a specified depth (Infinity for full flattening). This is the simplest 
+            and most performant method when modern JS environments are available.
+            </p>
+
+            <h3>4. Reduce with Recursion</h3>
+            <p class="method-description">
+            This approach uses <code>Array.prototype.reduce()</code> to accumulate values while 
+            recursively flattening sub-arrays. It is a functional programming style alternative 
+            to the standard recursion method.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Advanced Array Flattening Methods in JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Array Flattening Methods</h1>
+
+        <label for="inputArray">Input Nested Array (JavaScript notation):</label>
+        <textarea id="inputArray">[1, [2, [3, 4], 5], 6, [[7]], 8]</textarea>
+
+        <div>
+            <button onclick="runRecursive()">Recursive Flatten</button>
+            <button onclick="runStack()">Stack (Iterative DFS) Flatten</button>
+            <button onclick="runQueue()">Queue (BFS) Flatten</button>
+            <button onclick="runMemoized()">Memoized (DP-inspired) Flatten</button>
+            <button onclick="runGenerator()">Generator Flatten</button>
+            <button onclick="runReduce()">Reduce + Recursion Flatten</button>
+            <button onclick="runDeque()">Deque (Efficient BFS) Flatten</button>
+            <button onclick="runLinear()">Linear Flatten (No recursion)</button>
+        </div>
+
+        <div id="output" class="results" aria-live="polite" aria-label="Flattened array output">
+            Result
+        </div>
+
+        <p>
+            Click the buttons above to apply each method to the input nested array
+            and view the flattened result along with complexity analysis.
+        </p>
+
+        <section class="method">
+            <h2>Methods Explanation & Complexity</h2>
+            <p>
+                This demonstration features multiple algorithms and data structure
+                approaches to flatten nested arrays, following SOLID principles. Each
+                method exhibits a unique strategy with time and space complexity
+                details:
+            </p>
+            <ul>
+                <li>
+                    <strong>Recursive Flatten:</strong>
+                    Classical recursion traversing nested elements.
+                </li>
+                <li>
+                    <strong>Stack Flatten:</strong> Iterative depth-first search using
+                    an explicit stack.
+                </li>
+                <li>
+                    <strong>Queue Flatten:</strong> Iterative breadth-first search using
+                    a queue.
+                </li>
+                <li>
+                    <strong>Memoized Flatten:</strong> Dynamic programming inspired;
+                    caches results of repeated subarrays.
+                </li>
+                <li>
+                    <strong>Generator Flatten:</strong> Lazy flattening using JavaScript
+                    generator functions.
+                </li>
+                <li>
+                    <strong>Reduce Flatten:</strong> Functional programming approach
+                    using Array.reduce with recursion.
+                </li>
+                <li>
+                    <strong>Deque Flatten:</strong> Efficient BFS traversal using a
+                    custom double-ended queue.
+                </li>
+                <li>
+                    <strong>Linear Flatten:</strong> Linear time, non-recursive solution
+                    adapted from StackOverflow.
+                </li>
+            </ul>
+
+            <div id="codeInfo" class="code" aria-live="polite" aria-label="Code information">
+                Code
+            </div>
+
+            <div id="complexityInfo" class="complexity" aria-live="polite" aria-label="Complexity information">
+                Time Complexity
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

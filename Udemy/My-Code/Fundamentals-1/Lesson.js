@@ -101,8 +101,9 @@ console.log('My name is ${firstName}'); // In a string literal the $ doesnt work
 // $ is a short for document.getElementById
 
 // Prompt()
-let value = prompt("Enter a value"); // Prompt is used to take input from a user.
-console.log(value); //  Any input is taken as string
+// let value = prompt("Enter a value"); // Prompt is used to take input from a user.
+// console.log(value); //  Any input is taken as string
 
+const button = document.querySelector('.btn');
 
-
+console.log(button);
