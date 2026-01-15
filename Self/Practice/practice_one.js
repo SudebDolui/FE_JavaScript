@@ -1,27 +1,27 @@
-"use strict";
+// "use strict";
 
 /* 
 ------> Console log statements starts here <------ 
 */
 
-debugger; // ----> It is used to debug the code from the line where it was declared.
+// debugger; // ----> It is used to debug the code from the line where it was declared.
 
-console.log("This is a generic console message and variables can be check after placing , after the double quotes");
-console.clear() // ----> This clears the consoles that were given till here.
-console.assert(null === '' | 'The condition is false'); // ----> It checks for condition.
-console.group('Console Group Starts here'); // ----> Console group statement starts here.
-console.log('Console Group one Starts here');
-console.groupCollapsed('Console Group Collapsed here'); // ----> Console group statement starts here.
-console.log('Console Group Two Starts here');
-console.groupEnd(); // ----> Console group statement Ends here.
-console.log('Console Group One Resumes here');
-console.groupEnd(); // ----> Console group statement Ends here.
-console.table([
-    {'Name': 'Name One', 'Id': 0},
-    {'Name': 'Name Two', 'Id': 1},
-    {'Name': 'Name Three', 'Id': 2},
-    {'Name': 'Name Four', 'Id': 3},
-]);
+// console.log("This is a generic console message and variables can be check after placing , after the double quotes");
+// console.clear() // ----> This clears the consoles that were given till here.
+// console.assert(null === '' | 'The condition is false'); // ----> It checks for condition.
+// console.group('Console Group Starts here'); // ----> Console group statement starts here.
+// console.log('Console Group one Starts here');
+// console.groupCollapsed('Console Group Collapsed here'); // ----> Console group statement starts here.
+// console.log('Console Group Two Starts here');
+// console.groupEnd(); // ----> Console group statement Ends here.
+// console.log('Console Group One Resumes here');
+// console.groupEnd(); // ----> Console group statement Ends here.
+// console.table([
+//     {'Name': 'Name One', 'Id': 0},
+//     {'Name': 'Name Two', 'Id': 1},
+//     {'Name': 'Name Three', 'Id': 2},
+//     {'Name': 'Name Four', 'Id': 3},
+// ]);
 
 /* 
 ------> Console log statements ends here <------ 
@@ -31,55 +31,55 @@ console.table([
 ------> Closures concept starts here <------ 
 */
 
-let externalClosureVar = 5;
+// let externalClosureVar = 5;
 
-function testClosure() {
-    let internalClosureVar = 0;
-    function check() {return internalClosureVar++};
-    return check();
-}
+// function testClosure() {
+//     let internalClosureVar = 0;
+//     function check() {return internalClosureVar++};
+//     return check();
+// }
 
-console.log("-----> Testing function[testClosure] Starts Here <-----");
-console.log("It Returns function", testClosure);
-console.log("It Returns function and calls it", testClosure());
-console.log("It Returns function and calls it", testClosure());
-console.log("-----> Testing function[testClosure] Ends Here <-----");
+// console.log("-----> Testing function[testClosure] Starts Here <-----");
+// console.log("It Returns function", testClosure);
+// console.log("It Returns function and calls it", testClosure());
+// console.log("It Returns function and calls it", testClosure());
+// console.log("-----> Testing function[testClosure] Ends Here <-----");
 
-function testClosureOne() {
-    let internalClosureVar = 0;
-    return function() {return internalClosureVar++};
-}
+// function testClosureOne() {
+//     let internalClosureVar = 0;
+//     return function() {return internalClosureVar++};
+// }
 
-console.log("-----> Testing function[testClosureOne] Starts Here <-----");
-console.log('It returns the function', testClosureOne);
-console.log('It calls the function for the first time', testClosureOne());
-console.log('It calls the function with anonymous', testClosureOne()());
-console.log('It calls the function with anonymous 2nd Time', testClosureOne()());
-console.log("-----> Testing function[testClosureOne] Ends Here <-----");
+// console.log("-----> Testing function[testClosureOne] Starts Here <-----");
+// console.log('It returns the function', testClosureOne);
+// console.log('It calls the function for the first time', testClosureOne());
+// console.log('It calls the function with anonymous', testClosureOne()());
+// console.log('It calls the function with anonymous 2nd Time', testClosureOne()());
+// console.log("-----> Testing function[testClosureOne] Ends Here <-----");
 
-const testClosureTwo = (function () {
-    let internalClosureVar = 0;
-    return function (){return internalClosureVar++};
-}());
+// const testClosureTwo = (function () {
+//     let internalClosureVar = 0;
+//     return function (){return internalClosureVar++};
+// }());
 
-console.log("-----> Testing function[testClosureTwo] Starts Here <-----");
-console.log("It Returns function", testClosureTwo);
-console.log("It Returns function and calls it", testClosureTwo());
-console.log("It Returns function and calls it 2nd Time", testClosureTwo());
-console.log("It Returns function and calls it 3rd Time", testClosureTwo());
-console.log("-----> Testing function[testClosureTwo] Ends Here <-----");
+// console.log("-----> Testing function[testClosureTwo] Starts Here <-----");
+// console.log("It Returns function", testClosureTwo);
+// console.log("It Returns function and calls it", testClosureTwo());
+// console.log("It Returns function and calls it 2nd Time", testClosureTwo());
+// console.log("It Returns function and calls it 3rd Time", testClosureTwo());
+// console.log("-----> Testing function[testClosureTwo] Ends Here <-----");
 
 
-function customLoop(number = 0) {
-    console.log('Loop Number', number);
-    return number ? customLoop(--number) : console.log('Loop Ended');
-    //@ if(number) {return customLoop(number--)} //! It returns an infinite loop.
-};
+// function customLoop(number = 0) {
+//     console.log('Loop Number', number);
+//     return number ? customLoop(--number) : console.log('Loop Ended');
+//     //@ if(number) {return customLoop(number--)} //! It returns an infinite loop.
+// };
 
-console.log("-----> Testing Recursion Starts Here <-----");
-console.log('Call loop 3 times', customLoop(3));
-console.log('Call loop 0 times', customLoop());
-console.log("-----> Testing Recursions Ends Here <-----");
+// console.log("-----> Testing Recursion Starts Here <-----");
+// console.log('Call loop 3 times', customLoop(3));
+// console.log('Call loop 0 times', customLoop());
+// console.log("-----> Testing Recursions Ends Here <-----");
 
 /* 
 ------> Closures concept ends here <------ 
@@ -99,28 +99,29 @@ console.log("-----> Testing Recursions Ends Here <-----");
 // console.log("-----> Starts Here <-----");
 // console.log("-----> Ends Here <-----");
 
-function calcTip(bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
-}
+// function calcTip(bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+// }
 
-let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-let tips = [];
-let totals = [];
+// let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// let tips = [];
+// let totals = [];
 
-for (let i = 0; i < bills.length; i++) {
-    const tip = calcTip(bills[i]);
-    tips.push(tip);
-    totals.push(tip + bills[i]);
-}
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i]);
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// }
 
-console.log(bills, tips, totals);
+// console.log(bills, tips, totals);
 
-function calcAverage(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum / arr.length;
-}
+// function calcAverage(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum / arr.length;
+// }
 
-console.log(calcAverage(totals));
+// console.log(calcAverage(totals));
+

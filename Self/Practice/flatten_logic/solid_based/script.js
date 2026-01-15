@@ -361,7 +361,11 @@ class Deque {
 class DequeFlatten extends FlattenStrategy {
   flatten(arr) {
     const deque = new Deque();
-    for (const item of arr) deque.pushBack(item);
+    for (const item of arr) {
+      console.log(item);
+      deque.pushBack(item);
+      console.log(deque);
+    };
     const result = [];
     while (!deque.isEmpty()) {
       const next = deque.popFront();
